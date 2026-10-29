@@ -1,0 +1,1102 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="SeqKit - a cross-platform and ultrafast toolkit for FASTA/Q file manipulation">
+      
+      
+        <meta name="author" content="Wei Shen">
+      
+      
+      
+        <link rel="prev" href="../usage/">
+      
+      
+        <link rel="next" href="../tutorial/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../files/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>FAQs - SeqKit - Ultrafast FASTA/Q kit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faqs-on-fastaq-manipulations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SeqKit - Ultrafast FASTA/Q kit" class="md-header__button md-logo" aria-label="SeqKit - Ultrafast FASTA/Q kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SeqKit - Ultrafast FASTA/Q kit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/shenwei356/seqkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SeqKit - Ultrafast FASTA/Q kit" class="md-nav__button md-logo" aria-label="SeqKit - Ultrafast FASTA/Q kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    SeqKit - Ultrafast FASTA/Q kit
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/shenwei356/seqkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-produce-an-overview-of-fastq-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to produce an overview of FASTQ files?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-gc-content-of-every-sequence-in-fastaq-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to get GC content of every sequence in FASTA/Q file?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-extract-sequences-subset-from-fastaq-file-with-nameid-list-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to extract sequences subset from FASTA/Q file with name/ID list file?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-find-fastaq-sequences-containing-degenerate-bases-and-locate-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to find FASTA/Q sequences containing degenerate bases and locate them?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-remove-duplicated-fastaq-records-with-same-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to remove duplicated FASTA/Q records with same sequences?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-locate-motifsubsequenceenzyme-digest-site-in-fastaq-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to locate motif/subsequence/enzyme digest site in FASTA/Q sequence?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-sort-huge-number-of-fasta-sequences-by-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to sort huge number of FASTA sequences by length?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-split-fasta-sequences-according-to-information-in-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to split FASTA sequences according to information in header?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-search-and-replace-fasta-header-with-known-character-strings-from-a-text-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to search and replace FASTA header with known character strings from a text file?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-extract-paired-reads-from-two-paired-end-reads-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to extract paired reads from two paired-end reads file?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-concatenate-two-fasta-sequences-in-to-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to concatenate two FASTA sequences in to one?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/shenwei356" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    More tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-produce-an-overview-of-fastq-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to produce an overview of FASTQ files?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-gc-content-of-every-sequence-in-fastaq-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to get GC content of every sequence in FASTA/Q file?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-extract-sequences-subset-from-fastaq-file-with-nameid-list-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to extract sequences subset from FASTA/Q file with name/ID list file?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-find-fastaq-sequences-containing-degenerate-bases-and-locate-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to find FASTA/Q sequences containing degenerate bases and locate them?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-remove-duplicated-fastaq-records-with-same-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to remove duplicated FASTA/Q records with same sequences?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-locate-motifsubsequenceenzyme-digest-site-in-fastaq-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to locate motif/subsequence/enzyme digest site in FASTA/Q sequence?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-sort-huge-number-of-fasta-sequences-by-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to sort huge number of FASTA sequences by length?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-split-fasta-sequences-according-to-information-in-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to split FASTA sequences according to information in header?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-search-and-replace-fasta-header-with-known-character-strings-from-a-text-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to search and replace FASTA header with known character strings from a text file?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-extract-paired-reads-from-two-paired-end-reads-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to extract paired reads from two paired-end reads file?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-concatenate-two-fasta-sequences-in-to-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to concatenate two FASTA sequences in to one?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="faqs-on-fastaq-manipulations">FAQs on FASTA/Q manipulations</h1>
+<p><strong>This page was originally written as the section <a href="https://read.biostarhandbook.com/data/fastq-manipulation.html">FASTA/Q manipulations</a> of <a href="https://read.biostarhandbook.com/">The Biostar Handbook: A Beginner's Guide to Bioinformatics</a> (<a href="https://www.biostars.org/p/225812/">discussion on Biostars.org</a>)</strong>.</p>
+<hr />
+<p>This page illustrates common FASTA/Q manipulations using
+<a href="http://bioinf.shenwei.me/seqkit/">SeqKit</a>.
+Some other utilities, including <a href="http://bioinf.shenwei.me/csvtk/">csvtk</a> (CSV/TSV toolkit) and shell commands were also used.</p>
+<p>Note: SeqKit seamlessly support FASTA and FASTQ formats both in their original form or
+in stored in gzipped compressed format. We list FASTA or FASTQ depending on the more common
+usage but you can always use it on the other type as well.</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+<ul>
+<li><a href="#example-data">Example data</a></li>
+<li><a href="#how-to-produce-an-overview-of-fastq-files">How to produce an overview of FASTQ files?</a></li>
+<li><a href="#how-to-get-gc-content-of-every-sequence-in-fastaq-file">How to get GC content of every sequence in FASTA/Q file?</a></li>
+<li><a href="#how-to-extract-sequences-subset-from-fastaq-file-with-nameid-list-file">How to extract sequences subset from FASTA/Q file with name/ID list file?</a></li>
+<li><a href="#how-to-find-fastaq-sequences-containing-degenerate-bases-and-locate-them">How to find FASTA/Q sequences containing degenerate bases and locate them?</a></li>
+<li><a href="#how-to-remove-duplicated-fastaq-records-with-same-sequences">How to remove duplicated FASTA/Q records with same sequences?</a></li>
+<li><a href="#how-to-locate-motifsubsequenceenzyme-digest-site-in-fastaq-sequence">How to locate motif/subsequence/enzyme digest site in FASTA/Q sequence?</a></li>
+<li><a href="#how-to-sort-huge-number-of-fasta-sequences-by-length">How to sort huge number of FASTA sequences by length?</a></li>
+<li><a href="#how-to-split-fasta-sequences-according-to-information-in-header">How to split FASTA sequences according to information in header?</a></li>
+<li><a href="#how-to-search-and-replace-fasta-header-with-known-character-strings-from-a-text-file">How to search and replace FASTA header with known character strings from a text file?</a></li>
+<li><a href="#how-to-extract-paired-reads-from-two-paired-end-reads-file">How to extract paired reads from two paired-end reads file?</a></li>
+<li><a href="#how-to-concatenate-two-fasta-sequences-in-to-one">How to concatenate two FASTA sequences in to one?</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+<h2 id="example-data">Example data</h2>
+<p>One FASTQ file (sample reads, 1M) and two FASTA files (Virus DNA and protein
+sequences from NCBI RefSeq database, 60+40M) are used.</p>
+<pre><code>wget http://data.biostarhandbook.com/reads/duplicated-reads.fq.gz
+wget ftp://ftp.ncbi.nih.gov/refseq/release/viral/viral.1.1.genomic.fna.gz
+wget ftp://ftp.ncbi.nih.gov/refseq/release/viral/viral.1.protein.faa.gz
+</code></pre>
+<h2 id="how-to-produce-an-overview-of-fastq-files">How to produce an overview of FASTQ files?</h2>
+<p>Sequence format and type are automatically detected.</p>
+<pre><code>$ seqkit stat *.gz
+file                      format  type     num_seqs      sum_len  min_len   avg_len    max_len
+duplicated-reads.fq.gz    FASTQ   DNA        15,000    1,515,000      101       101        101
+viral.1.1.genomic.fna.gz  FASTA   DNA         7,048  203,325,120      200  28,848.6  2,473,870
+viral.1.protein.faa.gz    FASTA   Protein   252,611   62,024,702        5     245.5      8,960
+</code></pre>
+<h2 id="how-to-get-gc-content-of-every-sequence-in-fastaq-file">How to get GC content of every sequence in FASTA/Q file?</h2>
+<p><code>seqkit fx2tab</code> converts FASTA/Q to 3-column tabular format (1th: name/ID,
+2nd: sequence, 3rd: quality), and can also provides
+various information in new columns, including sequence length, GC content/GC skew, alphabet.</p>
+<p>GC content:</p>
+<pre><code>$ seqkit fx2tab --name --only-id --gc viral*.fna.gz
+gi|526245010|ref|NC_021865.1|                   40.94
+gi|460042095|ref|NC_020479.1|                   41.82
+gi|526244636|ref|NC_021857.1|                   49.17
+</code></pre>
+<p>Custom bases (A, C and A+C):</p>
+<pre><code>$ seqkit fx2tab -H -n -i -B a -B c -B ac viral.1.1.genomic.fna.gz
+#name   seq     qual    a       c       ac
+gi|526245010|ref|NC_021865.1|                   33.20   18.24   51.44
+gi|460042095|ref|NC_020479.1|                   32.57   19.63   52.20
+gi|526244636|ref|NC_021857.1|                   25.52   23.06   48.59
+</code></pre>
+<h2 id="how-to-extract-sequences-subset-from-fastaq-file-with-nameid-list-file">How to extract sequences subset from FASTA/Q file with name/ID list file?</h2>
+<p>This is a frequently used manipulation. Let's create a sample ID list file,
+which may also come from other way like mapping result.</p>
+<pre><code>$ seqkit sample --proportion 0.001  duplicated-reads.fq.gz \
+    | seqkit seq --name --only-id &gt; id.txt
+</code></pre>
+<p>ID list file:</p>
+<pre><code>$ head id.txt
+SRR1972739.2996
+SRR1972739.3044
+SRR1972739.3562
+</code></pre>
+<p>Searching by ID list file:</p>
+<pre><code>$ seqkit grep --pattern-file id.txt duplicated-reads.fq.gz \
+    &gt; duplicated-reads.subset.fq.gz
+</code></pre>
+<h2 id="how-to-find-fastaq-sequences-containing-degenerate-bases-and-locate-them">How to find FASTA/Q sequences containing degenerate bases and locate them?</h2>
+<p><code>seqkit fx2tab</code> converts FASTA/Q to tabular format and can output the sequence
+alphabet in a new column. And then text searching tools can be used to filter
+the table.</p>
+<pre><code>$ seqkit fx2tab -n -i -a viral.1.1.genomic.fna.gz \
+    | csvtk -H -t grep -f 4 -r -i -p "[^ACGT]"
+gi|446730228|ref|NC_019782.1|                   ACGNT
+gi|557940284|ref|NC_022800.1|                   ACGKT
+gi|564292828|ref|NC_023009.1|                   ACGNT
+</code></pre>
+<p>Long-option version of the command:</p>
+<pre><code>$ seqkit fx2tab --name --only-id --alphabet  viral.1.1.genomic.fna.gz \
+    | csvtk --no-header-row --tabs grep --fields 4 --use-regexp --ignore-case --pattern "[^ACGT]"
+</code></pre>
+<p>You can then exclude these sequences with <code>seqkit grep</code>:</p>
+<pre><code># save the sequenece IDs.
+$ seqkit fx2tab -n -i -a viral.1.1.genomic.fna.gz \
+    | csvtk -H -t grep -f 4 -r -i -p "[^ACGT]" | csvtk -H -t cut -f 1 &gt; id2.txt
+
+# search and exclude.
+$ seqkit grep --pattern-file id2.txt --invert-match viral.1.1.genomic.fna.gz &gt; clean.fa
+</code></pre>
+<p>Or locate the degenerate bases, e.g, <code>N</code> and <code>K</code></p>
+<pre><code>$ seqkit grep --pattern-file id2.txt viral.1.1.genomic.fna.gz \
+    | seqkit locate --ignore-case --only-positive-strand --pattern K+ --pattern N+
+seqID   patternName     pattern strand  start   end     matched
+gi|564292828|ref|NC_023009.1|   N+      N+      +       87972   87972   N
+gi|564292828|ref|NC_023009.1|   N+      N+      +       100983  100983  N
+gi|557307918|ref|NC_022755.1|   K+      K+      +       1788    1788    K
+gi|557307918|ref|NC_022755.1|   K+      K+      +       4044    4044    K
+gi|589287065|ref|NC_023585.1|   K+      K+      +       28296   28296   K
+gi|590911929|ref|NC_023639.1|   N+      N+      +       741654  741753  NNNNNNNNNNNNNNNNNNNNNNNNNNN
+</code></pre>
+<h2 id="how-to-remove-duplicated-fastaq-records-with-same-sequences">How to remove duplicated FASTA/Q records with same sequences?</h2>
+<pre><code>$ seqkit rmdup --by-seq --ignore-case duplicated-reads.fq.gz &gt; duplicated-reads.uniq.fq.gz
+</code></pre>
+<p>If the FASTA/Q file is very large, please switch on flag <code>-m/--md5</code>,
+which use MD5 instead of original seqs to reduce memory usage
+when comparing by sequences.</p>
+<p>You can also deduplicate according to sequence ID (default) or
+full name (<code>--by-name</code>).</p>
+<h2 id="how-to-locate-motifsubsequenceenzyme-digest-site-in-fastaq-sequence">How to locate motif/subsequence/enzyme digest site in FASTA/Q sequence?</h2>
+<p>Related posts:
+<a href="https://www.biostars.org/p/204658/">Question: Count and location of strings in fastq file reads</a>,
+<a href="https://www.biostars.org/p/221325/">Question: Finding TATAWAA in sequence</a>
+.</p>
+<p>Assuming a list of motifs (enzyme digest sites) in FASTA format to be located:</p>
+<pre><code>$ cat enzymes.fa
+&gt;EcoRI
+GAATTC
+&gt;MmeI
+TCCRAC
+&gt;SacI
+GAGCTC
+&gt;XcmI
+CCANNNNNNNNNTGG
+</code></pre>
+<p>Flag <code>--degenerate</code> is on because patterns contain degenerate bases. Command:</p>
+<pre><code>$ seqkit locate --degenerate --ignore-case --pattern-file enzymes.fa viral.1.1.genomic.fna.gz
+</code></pre>
+<p>Sample output (simplified and reformated by <code>csvtk -t uniq -f 3 | csvtk -t pretty</code>)</p>
+<pre><code>seqID                           patternName   pattern           strand   start   end     matched
+gi|526245010|ref|NC_021865.1|   MmeI          TCCRAC            +        1816    1821    TCCGAC
+gi|526245010|ref|NC_021865.1|   SacI          GAGCTC            +        19506   19511   GAGCTC
+gi|526245010|ref|NC_021865.1|   XcmI          CCANNNNNNNNNTGG   +        2221    2235    CCATATTTAGTGTGG
+</code></pre>
+<h2 id="how-to-sort-huge-number-of-fasta-sequences-by-length">How to sort huge number of FASTA sequences by length?</h2>
+<p>Sorting FASTA file in order of sequence size (small to large).</p>
+<pre><code>$ seqkit sort --by-length viral.1.1.genomic.fna.gz &gt; viral.1.1.genomic.sorted.fa
+</code></pre>
+<p>If the files are too big, use flag <code>--two-pass</code> which consumes lesser memory.</p>
+<pre><code>$ seqkit sort --by-length --two-pass viral.1.1.genomic.fna.gz &gt; viral.1.1.genomic.sorted.fa
+</code></pre>
+<p>You can also sort by sequence ID (default), full header (<code>--by-name</code>) or
+sequence content (<code>--by-seq</code>).</p>
+<h2 id="how-to-split-fasta-sequences-according-to-information-in-header">How to split FASTA sequences according to information in header?</h2>
+<p>Related posts:
+<a href="https://www.biostars.org/p/223937/">Question: extract same all similar sequences in FASTA based on the header</a>
+.</p>
+<p>For example, FASTA header line of <code>viral.1.protein.faa.gz</code> contain species name
+in square brackets.</p>
+<p>Overview of FASTA Headers:</p>
+<pre><code>$ seqkit head -n 3 viral.1.protein.faa.gz | seqkit seq --name
+gi|526245011|ref|YP_008320337.1| terminase small subunit [Paenibacillus phage phiIBB_Pl23]
+gi|526245012|ref|YP_008320338.1| terminase large subunit [Paenibacillus phage phiIBB_Pl23]
+gi|526245013|ref|YP_008320339.1| portal protein [Paenibacillus phage phiIBB_Pl23]
+</code></pre>
+<p><code>seqkit split</code> can split FASTA/Q files according to ID, number of parts, size
+of every parts, and sequence region. In this case, we'll split according to
+sequence ID (species names) which can be specified by flag <code>--id-regexp</code>.</p>
+<p>Default ID:</p>
+<pre><code>$ seqkit head -n 3 viral.1.protein.faa.gz \
+    | seqkit seq --name --only-id
+gi|526245011|ref|YP_008320337.1|
+gi|526245012|ref|YP_008320338.1|
+gi|526245013|ref|YP_008320339.1|
+</code></pre>
+<p>New ID:</p>
+<pre><code>$ seqkit head -n 3 viral.1.protein.faa.gz \
+    | seqkit seq --name --only-id --id-regexp "\[(.+)\]"
+Paenibacillus phage phiIBB_Pl23
+Paenibacillus phage phiIBB_Pl23
+Paenibacillus phage phiIBB_Pl23
+</code></pre>
+<p>Split:</p>
+<pre><code>$ seqkit split --by-id --id-regexp "\[(.+)\]" viral.1.protein.faa.gz
+</code></pre>
+<h2 id="how-to-search-and-replace-fasta-header-with-known-character-strings-from-a-text-file">How to search and replace FASTA header with known character strings from a text file?</h2>
+<p>Related posts:
+<a href="https://www.biostars.org/p/221962/">Question: Replace names in FASTA file with a known character string from a text file</a>,
+<a href="https://www.biostars.org/p/205044/">Question: Fasta header, search and replace...?</a>
+.</p>
+<p><code>seqKit replace</code> can find substrings in FASTA/Q header with regular expression
+and replace them with strings or corresponding values of found substrings
+provided by the tab-delimited key-value file.</p>
+<p>For example, to unify names of protein with unknown functions, we want to
+rename "hypothetical" to "putative" in lower case.
+The replacing rules are listed below in tab-delimited file:</p>
+<pre><code>$ cat changes.tsv
+Hypothetical    putative
+hypothetical    putative
+Putative        putative
+</code></pre>
+<p>Overview the FASTA headers containing "hypothetical":</p>
+<pre><code>$ seqkit grep --by-name --use-regexp --ignore-case --pattern hypothetical viral.1.protein.faa.gz \
+    | seqkit head -n 3 | seqkit seq --name
+gi|526245016|ref|YP_008320342.1| hypothetical protein IBBPl23_06 [Paenibacillus phage phiIBB_Pl23]
+gi|526245019|ref|YP_008320345.1| hypothetical protein IBBPl23_09 [Paenibacillus phage phiIBB_Pl23]
+gi|526245020|ref|YP_008320346.1| hypothetical protein IBBPl23_10 [Paenibacillus phage phiIBB_Pl23]
+</code></pre>
+<p>A regular expression, <code>^([^ ]+ )(\w+)</code>, was used to specify the key to be
+replaced, which is the first word after sequence ID in this case. Note that we also
+capture the ID (<code>^([^ ]+ )</code>) so we can restore it in "replacement" with
+capture variable  <code>${1}</code> (robuster than <code>$1</code>).
+And flag <code>-I/--key-capt-idx</code> (default: 1) is set to 2 because the key <code>(\w+)</code>
+is the second captured match. Command:</p>
+<pre><code>$ seqkit replace --kv-file changes.tsv --pattern "^([^ ]+ )(\w+) " \
+    --replacement "\${1}{kv} " --key-capt-idx 2 --keep-key viral.1.protein.faa.gz &gt; renamed.fa
+</code></pre>
+<h2 id="how-to-extract-paired-reads-from-two-paired-end-reads-file">How to extract paired reads from two paired-end reads file?</h2>
+<p>Use <a href="https://bioinf.shenwei.me/seqkit/usage/#pair">seqkit pair</a>.</p>
+<h2 id="how-to-concatenate-two-fasta-sequences-in-to-one">How to concatenate two FASTA sequences in to one?</h2>
+<p>Related posts: <a href="https://www.biostars.org/p/231806/">Combining two fasta sequences into one</a></p>
+<p>Data (not in same order):</p>
+<pre><code>$ cat 1.fa
+&gt;seq1
+aaaaa
+&gt;seq2
+ccccc
+&gt;seq3
+ggggg
+
+$ cat 2.fa
+&gt;seq3
+TTTTT
+&gt;seq2
+GGGGG
+&gt;seq1
+CCCCC
+</code></pre>
+<p>Just one command:</p>
+<pre><code>$ seqkit concat 1.fa 2.fa
+&gt;seq1
+aaaaaCCCCC
+&gt;seq2
+cccccGGGGG
+&gt;seq3
+gggggTTTTT
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

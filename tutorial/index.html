@@ -1,0 +1,1517 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="SeqKit - a cross-platform and ultrafast toolkit for FASTA/Q file manipulation">
+      
+      
+        <meta name="author" content="Wei Shen">
+      
+      
+      
+        <link rel="prev" href="../faq/">
+      
+      
+        <link rel="next" href="../benchmark/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../files/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Tutorial - SeqKit - Ultrafast FASTA/Q kit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SeqKit - Ultrafast FASTA/Q kit" class="md-header__button md-logo" aria-label="SeqKit - Ultrafast FASTA/Q kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SeqKit - Ultrafast FASTA/Q kit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/shenwei356/seqkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SeqKit - Ultrafast FASTA/Q kit" class="md-nav__button md-logo" aria-label="SeqKit - Ultrafast FASTA/Q kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    SeqKit - Ultrafast FASTA/Q kit
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/shenwei356/seqkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-monitoring-mapping-results-with-seqkit-bam-in-time-critical-situations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-time monitoring mapping results with seqkit bam in time-critical situations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-duplicated-and-nested-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removing duplicated and nested sequences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-manipulations-on-big-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Some manipulations on big genomes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-contaminated-reads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remove contaminated reads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-of-aligned-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling of aligned sequences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#play-with-mirna-hairpins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Play with miRNA hairpins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Play with miRNA hairpins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick glance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeated-hairpin-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repeated hairpin sequences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hairpins-in-different-species" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hairpins in different species
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bacteria-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bacteria genomes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bacteria genomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motif-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motif distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-multicopy-genes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find multicopy genes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flanking-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flanking sequences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/shenwei356" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    More tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#real-time-monitoring-mapping-results-with-seqkit-bam-in-time-critical-situations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-time monitoring mapping results with seqkit bam in time-critical situations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-duplicated-and-nested-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removing duplicated and nested sequences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-manipulations-on-big-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Some manipulations on big genomes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-contaminated-reads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remove contaminated reads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-of-aligned-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling of aligned sequences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#play-with-mirna-hairpins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Play with miRNA hairpins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Play with miRNA hairpins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick glance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeated-hairpin-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repeated hairpin sequences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hairpins-in-different-species" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hairpins in different species
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bacteria-genomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bacteria genomes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bacteria genomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motif-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motif distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-multicopy-genes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find multicopy genes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flanking-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flanking sequences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tutorial">Tutorial</h1>
+<h2 id="real-time-monitoring-mapping-results-with-seqkit-bam-in-time-critical-situations">Real-time monitoring mapping results with seqkit bam in time-critical situations</h2>
+<p>Some of SeqKit subcommands, including <code>watch</code>, <code>fish</code>, <code>scat</code>, <code>bam</code>, aid the real-time, streaming processing of data in FASTQ/FASTA and BAM formats,
+enabling the development of analysis pipelines in time-critical situations.
+To illustrate the possibilities opened up by the these features, we present a small pipeline which maps a dataset of SARS-CoV-2
+amplicon reads to the reference sequence using <code>minimap2</code> as they are being downloaded.
+The stream of SAM alignments is then converted into a stream of BAM records and passed to <code>seqkit bam</code>,
+which filters for records with aligned reference lengths between <code>310</code> and <code>410</code> and displays the distribution of aligned
+reference lengths after every <code>5000</code> records also saving it to a PDF file.
+The next element of the pipeline is another instance of the <code>seqkit bam</code> subcommand, which displays the distribution of alignment
+accuracies after every 10000 records.
+The stream of BAM records is then passed on to samtools sort to produce the final sorted BAM file.
+Finally, <code>seqkit bam</code> is used to display detailed alignment statistics from the final sorted BAM file in a pretty format.</p>
+<pre><code>#!/bin/bash
+set -o nounset
+
+# Define reference and data URL:
+REF_URL="https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?tool=portal&amp;save=file&amp;log$=seqview&amp;db=nuccore&amp;report=fasta&amp;id=1798174254&amp;extrafeat=null&amp;conwithfeat=on&amp;hide-cdd=on&amp;ncbi_phid=CE8B108356DDCF110000000005B10489"
+DATA_URL="http://ftp.sra.ebi.ac.uk/vol1/fastq/SRR145/055/SRR14560555/SRR14560555_1.fastq.gz"
+
+# Map SARS-CoV-2 amplicon reads to reference followed by these steps:
+# - keep only primary reads with mapping quality greater than 1.
+# - Keep only alignments which align to a reference segments with lengths between 310 and 420.
+#   Show an approximate histogram of aligned reference lengths after every 5000 records.
+# - Show an approximate histogram of alignment accuracy after every 10000 records.
+# - Pipe the BAM into samtools for sorting.
+minimap2 -K 10M -t 8 -ax map-ont \
+        &lt;(wget -q -O - "$REF_URL") \
+        &lt;(wget -q -O - "$DATA_URL") 2&gt;/dev/null \
+    | samtools view -F 2304 -q 1 -b - \
+    | seqkit bam -O aln_len.pdf -f RefAln -m 310 -M 410 -p 5000 -x - \
+    | seqkit bam -O aln_acc.pdf -f Acc  -p 10000 -x - \
+    | samtools sort -o sars_artic_sorted.bam -
+
+# Show statistics from the sorted BAM:
+seqkit bam -s -k sars_artic_sorted.bam
+</code></pre>
+<h2 id="removing-duplicated-and-nested-sequences">Removing duplicated and nested sequences</h2>
+<p>https://twitter.com/bentemperton/status/1673999868933599232</p>
+<p>sample data</p>
+<pre><code>$ cat contigs.fa
+&gt;big
+ACTGACGATCGATACGCAGCACAGCAG
+&gt;small_in_big_rc
+TGCTGCGTATCG
+&gt;small2
+ACTACGACTACGACT
+&gt;small2_alias
+ACTACGACTACGACT
+&gt;small2_rc
+AGTCGTAGTCGTAGT
+&gt;another
+ACTAACGA
+
+$ seqkit fx2tab -Q contigs.fa  | csvtk pretty -Ht -W 40 --clip
+big               ACTGACGATCGATACGCAGCACAGCAG
+small_in_big_rc   TGCTGCGTATCG
+small2            ACTACGACTACGACT
+small2_alias      ACTACGACTACGACT
+small2_rc         AGTCGTAGTCGTAGT
+another           ACTAACGA
+</code></pre>
+<p>Step 1. remove exactly duplicated sequences.</p>
+<pre><code>$ seqkit rmdup -s -i contigs.fa -o contigs.uniq1.fa
+[INFO] 2 duplicated records removed
+</code></pre>
+<p>Step 2. remove nested seqs.</p>
+<pre><code># pair-wise exactly searching
+seqkit locate -M -f contigs.uniq1.fa contigs.uniq1.fa -o match.tsv
+
+$ csvtk pretty  -W 40 --clip -t match.tsv
+seqID             patternName       pattern                       strand   start   end
+---------------   ---------------   ---------------------------   ------   -----   ---
+big               small_in_big_rc   TGCTGCGTATCG                  -        10      21
+big               big               ACTGACGATCGATACGCAGCACAGCAG   +        1       27
+small_in_big_rc   small_in_big_rc   TGCTGCGTATCG                  +        1       12
+small2            small2            ACTACGACTACGACT               +        1       15
+another           another           ACTAACGA                      +        1       8
+
+# IDs of embeded/nested sequences
+$ sed 1d match.tsv \
+    | awk '$2 != $1' \
+    | cut -f 2 \
+    | tee nested.txt
+small_in_big_rc
+
+# remove nested sequences
+$ seqkit grep -v -f nested.txt contigs.uniq1.fa \
+    -o contigs.uniq2.fa
+</code></pre>
+<p>Result</p>
+<pre><code>$ seqkit fx2tab -Q contigs.uniq2.fa | csvtk pretty -Ht -W 40 --clip
+big       ACTGACGATCGATACGCAGCACAGCAG
+small2    ACTACGACTACGACT
+another   ACTAACGA
+</code></pre>
+<h2 id="some-manipulations-on-big-genomes">Some manipulations on big genomes</h2>
+<p>A script <a href="https://github.com/shenwei356/memusg">memusg</a> is
+used to check the peek memory usage of seqkit. Usage: <code>memusg [-t] command</code>.</p>
+<ol>
+<li>
+<p>Human genome</p>
+<pre><code>$ seqkit stat hsa.fa
+file    format  type  num_seqs        sum_len  min_len       avg_len      max_len
+hsa.fa  FASTA   DNA        194  3,099,750,718      970  15,978,096.5  248,956,422
+</code></pre>
+</li>
+<li>
+<p>Build FASTA index (<strong><em>optional</em></strong>, when using flag <code>-2</code> (<code>--two-pass</code>),
+   some commands will automaticlly build it).
+   For some commands, including <code>subseq</code>, <code>split</code>, <code>sort</code> and <code>shuffle</code>,
+   when input files are (plain or gzipped) FASTA files or stdin,
+   FASTA index would be optional used for
+   rapid acccess of sequences and reducing memory occupation.
+   <strong><em>ATTENTION</em></strong>: the <code>.seqkit.fai</code> file created by SeqKit is a little different from .fai file
+   created by samtools. SeqKit uses full sequence head instead of just ID as key.</p>
+<pre><code>$ memusg -t seqkit faidx --id-regexp "^(.+)$"  hsa.fa -o hsa.fa.seqkit.fai
+
+elapsed time: 10.011s
+peak rss: 177.21 MB
+</code></pre>
+<p>Create common .fai file:</p>
+<pre><code>$ memusg -t seqkit faidx hsa.fa -o hsa.fa.fai2
+
+elapsed time: 10.454s
+peak rss: 172.82 MB
+</code></pre>
+<p>Performance of samtools:</p>
+<pre><code>$ memusg -t samtools faidx hsa.fa
+
+elapsed time: 9.574s
+peak rss: 1.45 MB
+</code></pre>
+<p>Exactly same content:</p>
+<pre><code>$ md5sum hsa.fa.fai*
+21e0c25b4d817d1c19ee8107191b9b31  hsa.fa.fai
+21e0c25b4d817d1c19ee8107191b9b31  hsa.fa.fai2
+</code></pre>
+</li>
+<li>
+<p>Sorting by sequence length</p>
+<pre><code>$ memusg -t seqkit sort --by-length --reverse --two-pass hsa.fa &gt; hsa.sorted.fa
+[INFO] create and read FASTA index ...
+[INFO] read sequence IDs and lengths from FASTA index ...
+[INFO] 194 sequences loaded
+[INFO] sorting ...
+[INFO] output ...
+
+elapsed time: 4.892s
+peak rss: 500.15 MB
+</code></pre>
+<p>Detail:</p>
+<pre><code>$ seqkit fx2tab --length hsa.sorted.fa --name --only-id | cut -f 1,4 | more
+1       248956422
+2       242193529
+3       198295559
+4       190214555
+5       181538259
+6       170805979
+7       159345973
+X       156040895
+8       145138636
+9       138394717
+11      135086622
+10      133797422
+12      133275309
+13      114364328
+14      107043718
+15      101991189
+16      90338345
+17      83257441
+18      80373285
+20      64444167
+19      58617616
+Y       57227415
+22      50818468
+21      46709983
+KI270728.1      1872759
+KI270727.1      448248
+...
+
+real    0m10.697s
+user    0m11.153s
+sys     0m0.917s
+</code></pre>
+</li>
+<li>
+<p>Shuffling sequences</p>
+<pre><code>$ memusg -t seqkit shuffle hsa.fa --two-pass &gt; hsa.shuffled.fa
+[INFO] create and read FASTA index ...
+[INFO] read sequence IDs from FASTA index ...
+[INFO] 194 sequences loaded
+[INFO] shuffle ...
+[INFO] output ...
+
+elapsed time: 6.632s
+peak rss: 528.3 MB
+</code></pre>
+</li>
+<li>
+<p>Spliting into files with single sequence</p>
+<pre><code>$ memusg -t seqkit split --by-id hsa.fa --two-pass
+[INFO] split by ID. idRegexp: ^([^\s]+)\s?
+[INFO] create and read FASTA index ...
+[INFO] read sequence IDs from FASTA index ...
+[INFO] 194 sequences loaded
+[INFO] write 1 sequences to file: hsa.id_KI270743.1.fa
+[INFO] write 1 sequences to file: hsa.id_KI270706.1.fa
+[INFO] write 1 sequences to file: hsa.id_KI270717.1.fa
+[INFO] write 1 sequences to file: hsa.id_KI270718.1.fa
+[INFO] write 1 sequences to file: hsa.id_KI270468.1.fa
+...
+
+elapsed time: 18.807s
+peak rss: 1.36 GB
+</code></pre>
+</li>
+<li>
+<p>Geting subsequence of some chromesomes</p>
+<pre><code>$ memusg -t seqkit subseq -r 1:10 --chr X --chr Y  hsa.fa
+&gt;X_1-10 X dna_sm:chromosome chromosome:GRCh38:X:1:156040895:1 REF
+nnnnnnnnnn
+&gt;Y_1-10 Y dna_sm:chromosome chromosome:GRCh38:Y:2781480:56887902:1 REF
+NNNNNNNNNN
+
+elapsed time: 1.276s
+peak rss: 640.92 MB
+</code></pre>
+</li>
+<li>
+<p>Geting CDS sequence of chr 1 by GTF files</p>
+<pre><code>$ memusg -t seqkit subseq --gtf Homo_sapiens.GRCh38.84.gtf.gz --chr X --feature cds  hsa.fa &gt; chrX.gtf.cds.fa
+[INFO] read GTF file ...
+[INFO] 22420 GTF features loaded
+
+elapsed time: 8.643s
+peak rss: 846.14 MB
+</code></pre>
+</li>
+</ol>
+<h2 id="remove-contaminated-reads">Remove contaminated reads</h2>
+<ol>
+<li>
+<p>Mapping with reads on some potential contaminate genomes, and get the reads IDs list.</p>
+<pre><code>$ wc -l contaminate.list
+244 contaminate.list
+
+$ head -n 2 contaminate.list
+HWI-D00523:240:HF3WGBCXX:1:1101:2574:2226
+HWI-D00523:240:HF3WGBCXX:1:1101:12616:2205
+</code></pre>
+</li>
+<li>
+<p>Remove contaminated reads</p>
+<pre><code>$ seqkit grep -f contaminate.list -v reads_1.fq.gz -o reads_1.clean.fq.gz
+$ seqkit grep -f contaminate.list -v reads_2.fq.gz -o reads_2.clean.fq.gz
+
+$ seqkit stat *.fq.gz
+file                  seq_format   seq_type   num_seqs   min_len   avg_len   max_len
+reads_1.clean.fq.gz   FASTQ        DNA           2,256       226       227       229
+reads_1.fq.gz         FASTQ        DNA           2,500       226       227       229
+reads_2.clean.fq.gz   FASTQ        DNA           2,256       223       224       225
+reads_2.fq.gz         FASTQ        DNA           2,500       223       224       225
+</code></pre>
+</li>
+</ol>
+<h2 id="handling-of-aligned-sequences">Handling of aligned sequences</h2>
+<ol>
+<li>
+<p>Some mock sequences (usually they will be much longer)</p>
+<pre><code>$ cat seqs.fa
+&gt;seq1
+ACAACGTCTACTTACGTTGCATCGTCATGCTGCATTACGTAGTCTGATGATG
+&gt;seq2
+ACACCGTCTACTTTCATGCTGCATTACGTAGTCTGATGATG
+&gt;seq3
+ACAACGTCTACTTACGTTGCATCGTCATGCTGCACTGATGATG
+&gt;seq4
+ACAACGTCTACTTACGTTGCATCTTCGGTCATGCTGCATTACGTAGTCTGATGATG
+</code></pre>
+</li>
+<li>
+<p>Run multiple sequence alignment (clustalo)</p>
+<pre><code>clustalo -i seqs.fa -o seqs.msa.fa --force --outfmt fasta --threads=4
+</code></pre>
+</li>
+<li>
+<p>Convert FASTA format to tabular format.</p>
+<pre><code>$ seqkit fx2tab seqs.msa.fa
+seq1    ACAACGTCTACTTACGTTGCAT----CGTCATGCTGCATTACGTAGTCTGATGATG
+seq2    ---------------ACACCGTCTACTTTCATGCTGCATTACGTAGTCTGATGATG
+seq3    ACAACGTCTACTTACGTTGCATCGTCATGCTGCACTGATGATG-------------
+seq4    ACAACGTCTACTTACGTTGCATCTTCGGTCATGCTGCATTACGTAGTCTGATGATG
+</code></pre>
+<p>or</p>
+<pre><code>$ seqkit fx2tab seqs.msa.fa | cut -f 2
+ACAACGTCTACTTACGTTGCAT----CGTCATGCTGCATTACGTAGTCTGATGATG
+---------------ACACCGTCTACTTTCATGCTGCATTACGTAGTCTGATGATG
+ACAACGTCTACTTACGTTGCATCGTCATGCTGCACTGATGATG-------------
+ACAACGTCTACTTACGTTGCATCTTCGGTCATGCTGCATTACGTAGTCTGATGATG
+</code></pre>
+<p>For me, it's useful when 1) manually assembling Sanger sequencing result,
+2) designing site specific PCR primers.</p>
+</li>
+<li>
+<p>Remove gaps</p>
+<pre><code>$ seqkit seq seqs.msa.fa -g
+&gt;seq1
+ACAACGTCTACTTACGTTGCATCGTCATGCTGCATTACGTAGTCTGATGATG
+&gt;seq2
+ACACCGTCTACTTTCATGCTGCATTACGTAGTCTGATGATG
+&gt;seq3
+ACAACGTCTACTTACGTTGCATCGTCATGCTGCACTGATGATG
+&gt;seq4
+ACAACGTCTACTTACGTTGCATCTTCGGTCATGCTGCATTACGTAGTCTGATGATG
+</code></pre>
+</li>
+</ol>
+<h2 id="play-with-mirna-hairpins">Play with miRNA hairpins</h2>
+<h3 id="dataset">Dataset</h3>
+<p><a href="ftp://mirbase.org/pub/mirbase/21/hairpin.fa.gz"><code>hairpin.fa.gz</code></a>
+from <a href="ftp://mirbase.org/pub/mirbase/21/">The miRBase Sequence Database -- Release 21</a></p>
+<h3 id="quick-glance">Quick glance</h3>
+<ol>
+<li>
+<p>Sequence number</p>
+<pre><code>$ seqkit stat hairpin.fa.gz
+file           format  type  num_seqs    sum_len  min_len  avg_len  max_len
+hairpin.fa.gz  FASTA   RNA     28,645  2,949,871       39      103    2,354
+</code></pre>
+</li>
+<li>
+<p>First 10 bases</p>
+<pre><code>$ zcat hairpin.fa.gz \
+    | seqkit subseq -r 1:10 \
+    | seqkit sort -s
+    | seqkit seq -s \
+    | head -n 10
+AAAAAAAAAA
+AAAAAAAAAA
+AAAAAAAAAG
+AAAAAAAAAG
+AAAAAAAAAG
+AAAAAAAAAU
+AAAAAAAAGG
+AAAAAAACAU
+AAAAAAACGA
+AAAAAAAUUA
+</code></pre>
+<p>hmm, nothing special, non-coding RNA~</p>
+</li>
+</ol>
+<h3 id="repeated-hairpin-sequences">Repeated hairpin sequences</h3>
+<p>We may want to check how may identical hairpins among different species there are.
+<code>seqkit rmdup</code> could remove duplicated sequences by sequence content,
+and save the replicates to another file (here is <code>duplicated.fa.gz</code>),
+as well as replicating details (<code>duplicated.detail.txt</code>,
+1th column is the repeated number,
+2nd column contains sequence IDs separated by comma).</p>
+<pre><code>$ seqkit rmdup -s -i hairpin.fa.gz -o clean.fa.gz -d duplicated.fa.gz -D duplicated.detail.txt
+
+$ head -n 5 duplicated.detail.txt
+18      dre-mir-430c-1, dre-mir-430c-2, dre-mir-430c-3, dre-mir-430c-4, dre-mir-430c-5, dre-mir-430c-6, dre-mir-430c-7, dre-mir-430c-8, dre-mir-430c-9, dre-mir-430c-10, dre-mir-430c-11, dre-mir-430c-12, dre-mir-430c-13, dre-mir-430c-14, dre-mir-430c-15, dre-mir-430c-16, dre-mir-430c-17, dre-mir-430c-18
+16      hsa-mir-29b-2, mmu-mir-29b-2, rno-mir-29b-2, ptr-mir-29b-2, ggo-mir-29b-2, ppy-mir-29b-2, sla-mir-29b, mne-mir-29b, ppa-mir-29b-2, bta-mir-29b-2, mml-mir-29b-2, eca-mir-29b-2, aja-mir-29b, oar-mir-29b-1, oar-mir-29b-2, rno-mir-29b-3
+15      dme-mir-125, dps-mir-125, dan-mir-125, der-mir-125, dgr-mir-125-1, dgr-mir-125-2, dmo-mir-125, dpe-mir-125-2, dpe-mir-125-1, dpe-mir-125-3, dse-mir-125, dsi-mir-125, dvi-mir-125, dwi-mir-125, dya-mir-125
+13      hsa-mir-19b-1, ggo-mir-19b-1, age-mir-19b-1, ppa-mir-19b-1, ppy-mir-19b-1, ptr-mir-19b-1, mml-mir-19b-1, sla-mir-19b-1, lla-mir-19b-1, mne-mir-19b-1, bta-mir-19b, oar-mir-19b, chi-mir-19b
+13      hsa-mir-20a, ssc-mir-20a, ggo-mir-20a, age-mir-20, ppa-mir-20, ppy-mir-20a, ptr-mir-20a, mml-mir-20a, sla-mir-20, lla-mir-20, mne-mir-20, bta-mir-20a, eca-mir-20a
+</code></pre>
+<p>The result shows the most conserved miRNAs among different species,
+<code>mir-29b</code>, <code>mir-125</code>, <code>mir-19b-1</code> and <code>mir-20a</code>.
+And the <code>dre-miR-430c</code> has the most multicopies in <em>Danio rerio</em>.</p>
+<h3 id="hairpins-in-different-species">Hairpins in different species</h3>
+<ol>
+<li>
+<p>Before spliting by species, let's take a look at the sequence names.</p>
+<pre><code>$ seqkit seq hairpin.fa.gz -n | head -n 3
+cel-let-7 MI0000001 Caenorhabditis elegans let-7 stem-loop
+cel-lin-4 MI0000002 Caenorhabditis elegans lin-4 stem-loop
+cel-mir-1 MI0000003 Caenorhabditis elegans miR-1 stem-loop
+</code></pre>
+<p>The first three letters (e.g. <code>cel</code>) are the abbreviation of species names.
+So we could split hairpins by the first letters by defining custom
+sequence ID parsing regular expression <code>^([\w]+)\-</code>.</p>
+<p>By default, <code>seqkit</code> takes the first non-space letters as sequence ID.
+For example,</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">FASTA head</th>
+<th style="text-align: left;">ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">&gt;123456 gene name</td>
+<td style="text-align: left;">123456</td>
+</tr>
+<tr>
+<td style="text-align: left;">&gt;longname</td>
+<td style="text-align: left;">longname</td>
+</tr>
+<tr>
+<td style="text-align: left;">&gt;gi&#124;110645304&#124;ref&#124;NC_002516.2&#124; Pseudomona</td>
+<td style="text-align: left;">gi&#124;110645304&#124;ref&#124;NC_002516.2&#124;</td>
+</tr>
+</tbody>
+</table>
+<p>But for some sequences from NCBI,
+e.g. <code>&gt;gi|110645304|ref|NC_002516.2| Pseudomona</code>, the ID is <code>NC_002516.2</code>.
+In this case, we could set sequence ID parsing regular expression by flag
+<code>--id-regexp "\|([^\|]+)\| "</code> or just use flag <code>--id-ncbi</code>. If you want
+the <code>gi</code> number, then use <code>--id-regexp "^gi\|([^\|]+)\|"</code>.</p>
+</li>
+<li>
+<p>Split sequences by species.
+A custom ID parsing regular expression is used, <code>^([\w]+)\-</code>.</p>
+<pre><code>$ seqkit split hairpin.fa.gz -i --id-regexp "^([\w]+)\-" --two-pass
+</code></pre>
+<p><strong><em>To reduce memory usage when splitting big file, we should always use flag <code>--two-pass</code></em></strong></p>
+</li>
+<li>
+<p>Species with most miRNA hairpins. Third column is the sequences number.</p>
+<pre><code>$ cd hairpin.fa.gz.split/;
+$ seqkit stat hairpin.id_* \
+    | csvtk space2tab \
+    | csvtk -t sort -k num_seqs:nr \
+    | csvtk -t pretty \
+    | more
+file                     format   type   num_seqs   sum_len   min_len   avg_len   max_len
+hairpin.id_hsa.fasta     FASTA    RNA    1,881      154,242   82        82        82
+hairpin.id_mmu.fasta     FASTA    RNA    1,193      107,370   90        90        90
+hairpin.id_bta.fasta     FASTA    RNA    808        61,408    76        76        76
+hairpin.id_gga.fasta     FASTA    RNA    740        42,180    57        57        57
+hairpin.id_eca.fasta     FASTA    RNA    715        89,375    125       125       125
+hairpin.id_mtr.fasta     FASTA    RNA    672        231,840   345       345       345
+</code></pre>
+<p>Here, a CSV/TSV tool <a href="https://github.com/shenwei356/csvtk">csvtk</a>
+is used to sort and view the result.</p>
+</li>
+</ol>
+<p>For human miRNA hairpins</p>
+<ol>
+<li>
+<p>Length distribution.
+ <code>seqkit fx2tab</code> could show extra information like sequence length, GC content.
+ <a href="http://bioinf.shenwei.me/csvtk/"><code>csvtk</code></a> is used to plot.</p>
+<pre><code>$ seqkit grep -r -p '^hsa' hairpin.fa.gz  \
+    | seqkit fx2tab -l \
+    | cut -f 4  \
+    | csvtk -H plot hist --xlab Length --title "Human pre-miRNA length distribution"
+</code></pre>
+<p><img alt="hairpin.id_hsa.fa.gz.lendist.png" src="../files/hairpin/hairpin.id_hsa.fa.gz.lendist.png" /></p>
+<pre><code>$ seqkit grep -r -p '^hsa' hairpin.fa.gz \
+    | seqkit fx2tab -l \
+    | cut -f 4 \
+    | csvtk -H plot box --xlab Length --horiz --height 1.5
+</code></pre>
+<p><img alt="hairpin.id_hsa.fa.gz.lenbox.png" src="../files/hairpin/hairpin.id_hsa.fa.gz.lenbox.png" /></p>
+</li>
+</ol>
+<h2 id="bacteria-genomes">Bacteria genomes</h2>
+<h3 id="dataset_1">Dataset</h3>
+<p><a href="http://www.ncbi.nlm.nih.gov/nuccore/110645304">Pseudomonas aeruginosa PAO1</a>,
+files:</p>
+<ul>
+<li>Genbank file <a href="../files/PAO1/PAO1.gb"><code>PAO1.gb</code></a></li>
+<li>Genome FASTA file <a href="../files/PAO1/PAO1.fasta"><code>PAO1.fasta</code></a></li>
+<li>GTF file <a href="../files/PAO1/PAO1.gtf"><code>PAO1.gtf</code></a> was created with <a href="https://github.com/shenwei356/bio_scripts/blob/master/file_formats/extract_features_from_genbank_file.py"><code>extract_features_from_genbank_file.py</code></a>, by<pre><code>extract_features_from_genbank_file.py  PAO1.gb -t . -f gtf &gt; PAO1.gtf
+</code></pre>
+</li>
+</ul>
+<h3 id="motif-distribution">Motif distribution</h3>
+<p>Motifs</p>
+<pre><code>$ cat motifs.fa
+&gt;GTAGCGS
+GTAGCGS
+&gt;GGWGKTCG
+GGWGKTCG
+</code></pre>
+<ol>
+<li>
+<p>Sliding. Remember flag <code>--id-ncbi</code>, do you?
+  By the way, do not be scared by the long flag <code>--circle-genome</code>, <code>--step</code>
+  and so on. They have short ones, <code>-c</code>, <code>-s</code></p>
+<pre><code>$ seqkit sliding --id-ncbi --circular-genome \
+    --step 20000 --window 200000 PAO1.fasta -o PAO1.fasta.sliding.fa
+
+$ seqkit stat PAO1.fasta.sliding.fa
+file                   format  type  num_seqs     sum_len  min_len  avg_len  max_len
+PAO1.fasta.sliding.fa  FASTA   DNA        314  62,800,000  200,000  200,000  200,000
+</code></pre>
+</li>
+<li>
+<p>Locating motifs</p>
+<pre><code>$ seqkit locate --id-ncbi --ignore-case --degenerate \
+    --pattern-file motifs.fa  PAO1.fasta.sliding.fa -o  PAO1.fasta.sliding.fa.motifs.tsv
+</code></pre>
+</li>
+<li>
+<p>Ploting distribution (<a href="../files/PAO1/plot_motif_distribution.R">plot_motif_distribution.R</a>)</p>
+<pre><code># preproccess
+$ perl -ne 'if (/_sliding:(\d+)-(\d+)\t(.+)/) {$loc= $1 + 100000; print "$loc\t$3\n";} else {print}' PAO1.fasta.sliding.fa.motifs.tsv  &gt; PAO1.fasta.sliding.fa.motifs.tsv2
+
+# plot
+$ ./plot_motif_distribution.R
+</code></pre>
+<p>Result</p>
+<p><img alt="motif_distribution.png" src="../files/PAO1/motif_distribution.png" /></p>
+</li>
+</ol>
+<h3 id="find-multicopy-genes">Find multicopy genes</h3>
+<ol>
+<li>
+<p>Get all CDS sequences</p>
+<pre><code>$ seqkit subseq --id-ncbi --gtf PAO1.gtf --feature cds PAO1.fasta -o PAO1.cds.fasta
+
+$ seqkit stat *.fasta
+file            format  type  num_seqs    sum_len    min_len    avg_len    max_len
+PAO1.cds.fasta  FASTA   DNA      5,572  5,593,306         72    1,003.8     16,884
+PAO1.fasta      FASTA   DNA          1  6,264,404  6,264,404  6,264,404  6,264,404
+</code></pre>
+</li>
+<li>
+<p>Get duplicated sequences</p>
+<pre><code>$ seqkit rmdup --by-seq --ignore-case PAO1.cds.fasta -o PAO1.cds.uniq.fasta \
+    --dup-seqs-file PAO1.cds.dup.fasta --dup-num-file PAO1.cds.dup.text
+
+$ cat PAO1.cds.dup.text
+6       NC_002516.2_500104:501120:-, NC_002516.2_2556948:2557964:+, NC_002516.2_3043750:3044766:-, NC_002516.2_3842274:3843290:-, NC_002516.2_4473623:4474639:+, NC_002516.2_5382796:5383812:-
+2       NC_002516.2_2073555:2075438:+, NC_002516.2_4716660:4718543:+
+2       NC_002516.2_2072935:2073558:+, NC_002516.2_4716040:4716663:+
+2       NC_002516.2_2075452:2076288:+, NC_002516.2_4718557:4719393:+
+</code></pre>
+</li>
+</ol>
+<h3 id="flanking-sequences">Flanking sequences</h3>
+<ol>
+<li>
+<p>Get CDS and 1000 bp upstream sequence</p>
+<pre><code>$ seqkit subseq --id-ncbi --gtf PAO1.gtf \
+    --feature cds PAO1.fasta --up-stream 1000
+</code></pre>
+</li>
+<li>
+<p>Get 1000 bp upstream sequence of CDS, <em>NOT</em> including CDS.</p>
+<pre><code>$ seqkit subseq --id-ncbi --gtf PAO1.gtf \
+    --feature cds PAO1.fasta --up-stream 1000 --only-flank
+</code></pre>
+</li>
+</ol>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//seqkit.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

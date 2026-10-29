@@ -1,0 +1,1420 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="SeqKit - a cross-platform and ultrafast toolkit for FASTA/Q file manipulation">
+      
+      
+        <meta name="author" content="Wei Shen">
+      
+      
+      
+        <link rel="prev" href="../tutorial/">
+      
+      
+        <link rel="next" href="../note/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../files/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Benchmark - SeqKit - Ultrafast FASTA/Q kit</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#benchmark" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="SeqKit - Ultrafast FASTA/Q kit" class="md-header__button md-logo" aria-label="SeqKit - Ultrafast FASTA/Q kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SeqKit - Ultrafast FASTA/Q kit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Benchmark
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/shenwei356/seqkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SeqKit - Ultrafast FASTA/Q kit" class="md-nav__button md-logo" aria-label="SeqKit - Ultrafast FASTA/Q kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    SeqKit - Ultrafast FASTA/Q kit
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/shenwei356/seqkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmark
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#softwares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Softwares
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datasets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Datasets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset_afa-large-number-of-short-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dataset_A.fa - large number of short sequences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataset_bfa-small-number-of-large-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dataset_B.fa - small number of large sequences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataset_cfq-illumina-single-end-reads-se100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dataset_C.fq – Illumina single end reads (SE100)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-id-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence ID list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bed-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BED file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-1-reverse-complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 1. Reverse Complement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-2-extracting-sequences-by-id-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 2. Extracting sequences by ID list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-3-sampling-by-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 3. Sampling by number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-4-removing-duplicates-by-sequence-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 4. Removing duplicates by sequence content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-5-subsequence-with-bed-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 5. Subsequence with BED file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-of-multiple-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test of multiple threads:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests-on-different-file-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests on different file sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/shenwei356" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    More tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#softwares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Softwares
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datasets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Datasets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset_afa-large-number-of-short-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dataset_A.fa - large number of short sequences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataset_bfa-small-number-of-large-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dataset_B.fa - small number of large sequences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataset_cfq-illumina-single-end-reads-se100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dataset_C.fq – Illumina single end reads (SE100)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-id-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence ID list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bed-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BED file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-1-reverse-complement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 1. Reverse Complement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-2-extracting-sequences-by-id-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 2. Extracting sequences by ID list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-3-sampling-by-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 3. Sampling by number
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-4-removing-duplicates-by-sequence-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 4. Removing duplicates by sequence content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-5-subsequence-with-bed-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test 5. Subsequence with BED file
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-of-multiple-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test of multiple threads:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tests-on-different-file-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests on different file sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="benchmark">Benchmark</h1>
+<p><strong>Note: these benchmarks was performed in 2016</strong>.</p>
+<h2 id="softwares">Softwares</h2>
+<ol>
+<li><a href="https://github.com/shenwei356/seqkit">seqkit</a>. (Go).
+   Version <a href="https://github.com/shenwei356/seqkit/releases/tag/v0.3.1.1">v0.3.1.1</a>.
+   Compiled with Go 1.7rc5.</li>
+<li><a href="https://github.com/jimhester/fasta_utilities">fasta_utilities</a>. (Perl).
+   Version <a href="https://github.com/jimhester/fasta_utilities/tree/3dcc0bc6bf1e97839476221c26984b1789482579">3dcc0bc</a>.
+   Lots of dependencies to install.</li>
+<li><a href="http://hannonlab.cshl.edu/fastx_toolkit/">fastx_toolkit</a>. (Perl).
+   Version <a href="http://hannonlab.cshl.edu/fastx_toolkit/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2">0.0.13</a>.
+   Can't handle multi-line FASTA files.</li>
+<li><a href="http://seqmagick.readthedocs.io/en/latest/index.html#installation">seqmagick</a>. (Python).
+   Version 0.6.1</li>
+<li><a href="https://github.com/lh3/seqtk">seqtk</a>. (C).
+   Version <a href="https://github.com/lh3/seqtk/tree/fb85aad4ce1fc7b3d4543623418a1ae88fe1cea6">1.1-r92-dirty</a>.</li>
+</ol>
+<p>Not used:</p>
+<ol>
+<li><a href="https://github.com/mdshw5/pyfaidx">pyfaidx</a>. (Python).
+   Version <a href="https://pypi.python.org/packages/source/p/pyfaidx/pyfaidx-0.4.7.1.tar.gz#md5=f33604a3550c2fa115ac7d33b952127d">0.4.7.1</a>. <em>Not used, because it exhausted my memory (10G) when computing reverse-complement on a 5GB fasta file of 250 bp.</em></li>
+</ol>
+<p>A Python script <a href="https://github.com/shenwei356/memusg">memusg</a> was used
+to compute running time and peak memory usage of a process.</p>
+<h2 id="features">Features</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categories</th>
+<th style="text-align: left;">Features</th>
+<th style="text-align: left;">seqkit</th>
+<th style="text-align: left;">fasta_utilities</th>
+<th style="text-align: left;">fastx_toolkit</th>
+<th style="text-align: left;">pyfaidx</th>
+<th style="text-align: left;">seqmagick</th>
+<th style="text-align: left;">seqtk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Formats supports</strong></td>
+<td style="text-align: left;">Multi-line FASTA</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">FASTQ</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Multi-line  FASTQ</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Validating sequences</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Supporting RNA</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Functions</strong></td>
+<td style="text-align: left;">Searching by motifs</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Sampling</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Extracting sub-sequence</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Removing duplicates</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Partly</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Splitting</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Partly</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Splitting by seq</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Shuffling</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Sorting</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Locating motifs</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Common sequences</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Cleaning bases</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Transcription</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Translation</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Filtering by size</td>
+<td style="text-align: left;">Indirect</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Renaming header</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Other features</strong></td>
+<td style="text-align: left;">Cross-platform</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Partly</td>
+<td style="text-align: left;">Partly</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Reading STDIN</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Reading gzipped file</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Writing gzip file</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">--</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">--</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note 2</strong>: See <a href="http://bioinf.shenwei.me/seqkit/usage/">usage</a> for detailed options of seqkit.</p>
+<h2 id="datasets">Datasets</h2>
+<p>All test data is available here: <a href="http://app.shenwei.me/data/seqkit/seqkit-benchmark-data.tar.gz">seqkit-benchmark-data.tar.gz</a>  (2.2G)</p>
+<h3 id="dataset_afa-large-number-of-short-sequences">dataset_A.fa - large number of short sequences</h3>
+<p>Dataset A is reference genomes DNA sequences of gastrointestinal tract from
+<a href="http://hmpdacc.org/">NIH Human Microbiome Project</a>:
+<a href="http://downloads.hmpdacc.org/data/reference_genomes/body_sites/Gastrointestinal_tract.nuc.fsa"><code>Gastrointestinal_tract.nuc.fsa</code></a> (FASTA format, ~2.7G).</p>
+<h3 id="dataset_bfa-small-number-of-large-sequences">dataset_B.fa - small number of large sequences</h3>
+<p>Dataset B is Human genome from <a href="http://uswest.ensembl.org/info/data/ftp/index.html">ensembl</a>.</p>
+<ul>
+<li>Genome DNA:  <a href="ftp://ftp.ensembl.org/pub/release-84/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa.gz"><code>Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa.gz</code></a> (Gzipped FASTA file, ~900M)
+. Decompress it and rename to dataset_B.fa (~2.9G).</li>
+<li>GTF file:  <a href="ftp://ftp.ensembl.org/pub/release-84/gtf/homo_sapiens/Homo_sapiens.GRCh38.84.gtf.gz"><code>Homo_sapiens.GRCh38.84.gtf.gz</code></a> (~44M)</li>
+<li>BED file: <code>Homo_sapiens.GRCh38.84.bed.gz</code> was converted from <code>Homo_sapiens.GRCh38.84.gtf.gz</code> by  <a href="http://bedops.readthedocs.org/en/latest/content/reference/file-management/conversion/gtf2bed.html?highlight=gtf2bed"><code>gtf2bed</code></a>  with command<pre><code>$ zcat Homo_sapiens.GRCh38.84.gtf.gz | gtf2bed --do-not-sort | gzip -c &gt; Homo_sapiens.GRCh38.84.bed.gz
+</code></pre>
+</li>
+</ul>
+<h3 id="dataset_cfq-illumina-single-end-reads-se100">dataset_C.fq – Illumina single end reads (SE100)</h3>
+<p>Dataset C is Illumina single end (SE 100bp) reads file (~2.2G).</p>
+<p>Summary</p>
+<pre><code>$ seqkit stat *.fa
+file          format  type   num_seqs        sum_len  min_len       avg_len      max_len
+dataset_A.fa  FASTA   DNA      67,748  2,807,643,808       56      41,442.5    5,976,145
+dataset_B.fa  FASTA   DNA         194  3,099,750,718      970  15,978,096.5  248,956,422
+dataset_C.fq  FASTQ   DNA   9,186,045    918,604,500      100           100          100
+</code></pre>
+<h3 id="sequence-id-list">Sequence ID list</h3>
+<p>Parts of sequences IDs was sampled and shuffled from original data.
+They were used in test of extracting sequences by ID list.</p>
+<p>Commands:</p>
+<pre><code>$ seqkit sample -p 0.3  dataset_A.fa | seqkit seq --name --only-id | shuf &gt; ids_A.txt
+$ seqkit sample -p 0.3  dataset_B.fa | seqkit seq --name --only-id | shuf &gt; ids_B.txt    
+$ seqkit sample -p 0.03 dataset_C.fq | seqkit seq --name --only-id | shuf &gt; ids_C.txt
+</code></pre>
+<p>Numbers:</p>
+<pre><code>$ wc -l ids*.txt
+    20138 ids_A.txt
+    58 ids_B.txt
+2754516 ids_C.txt
+</code></pre>
+<h3 id="bed-file">BED file</h3>
+<p>Only BED data of chromosome 19 was used in test of subsequence with BED file:</p>
+<pre><code>$ zcat Homo_sapiens.GRCh38.84.bed.gz | grep -E "^19" | gzip -c &gt; chr19.bed.gz
+</code></pre>
+<h2 id="platform">Platform</h2>
+<p>PC:</p>
+<ul>
+<li>CPU: Intel Core i5-3320M @ 2.60GHz, two cores/4 threads</li>
+<li>RAM: DDR3 1600MHz, 12GB</li>
+<li>SSD: SAMSUNG 850 EVO 250G, SATA-3</li>
+<li>OS: Fedora 24 (Scientific KDE spin),  Kernal: 4.6.4-301.fc24.x86_64</li>
+</ul>
+<p>Softwares:</p>
+<ul>
+<li>Perl: perl 5, version 22, subversion 2 (v5.22.2) built for x86_64-linux-thread-multi</li>
+<li>Python: Python 2.7.11 (default, Jul 10 2016, 20:58:20) [GCC 6.1.1 20160621 (Red Hat 6.1.1-3)] on linux2</li>
+</ul>
+<h2 id="tests">Tests</h2>
+<p>Automatic benchmark and plotting scripts are available at:  <a href="https://github.com/shenwei356/seqkit/tree/master/benchmark">https://github.com/shenwei356/seqkit/tree/master/benchmark</a>.</p>
+<p>All tests were repeated 3 times,
+and average time and peak memory ware used for plotting.</p>
+<p>All data were readed once before tests began to minimize the influence of page cache.</p>
+<p>Output sequences of all softwares were not wrapped to fixed length.</p>
+<h3 id="test-1-reverse-complement">Test 1. Reverse Complement</h3>
+<p><code>revcom_biogo</code> (<a href="https://github.com/shenwei356/seqkit/blob/master/benchmark/revcom_biogo.go">source</a>,
+ <a href="https://github.com/shenwei356/seqkit/blob/master/benchmark/revcom_biogo?raw=true">binary</a> ),
+ a tool written in Golang (compiled with Go 1.6.3) using <a href="https://github.com/biogo/biogo">biogo</a>
+ (Version <a href="https://github.com/biogo/biogo/commit/7ebd71bd9afc52cdab7a7128467ae1a936b68958">7ebd71b</a>)
+ package,
+ was also used for comparison of FASTA file parsing performance.</p>
+<p><em>Note that some softwares (fasta_utilities and biogo) have different converting rules of computing complement sequence on ambiguous bases, there fore the results are different from others.</em></p>
+<p><a href="https://github.com/shenwei356/seqkit/blob/master/benchmark/run_benchmark_01_revcom.sh">Commands</a></p>
+<h3 id="test-2-extracting-sequences-by-id-list">Test 2. Extracting sequences by ID list</h3>
+<p><a href="https://github.com/shenwei356/seqkit/blob/master/benchmark/run_benchmark_02_exctact_by_id_list.sh">Commands</a></p>
+<h3 id="test-3-sampling-by-number">Test 3. Sampling by number</h3>
+<p><em>Note that different softwares have different sampling strategies, the peak memory  depends on size of sampled sequences and the results may not be the same.</em></p>
+<p><a href="https://github.com/shenwei356/seqkit/blob/master/benchmark/run_benchmark_03_sampling.sh">Commands</a></p>
+<h3 id="test-4-removing-duplicates-by-sequence-content">Test 4. Removing duplicates by sequence content</h3>
+<p><a href="https://github.com/shenwei356/seqkit/blob/master/benchmark/run_benchmark_04_remove_duplicated_seqs_by_seq.sh">Commands</a></p>
+<h3 id="test-5-subsequence-with-bed-file">Test 5. Subsequence with BED file</h3>
+<p><a href="https://github.com/shenwei356/seqkit/blob/master/benchmark/run_benchmark_05_subseq_with_bed.sh">Commands</a></p>
+<h2 id="results">Results</h2>
+<p>seqkit version: v0.3.1.1</p>
+<p>FASTA:</p>
+<p><img src="benchmark.5tests.tsv.png" alt="" width="750" align="center" /></p>
+<p>FASTQ:</p>
+<p><img src="benchmark.5tests.tsv.C.png" alt="" width="750" align="center" /></p>
+<h3 id="test-of-multiple-threads">Test of multiple threads:</h3>
+<p>From the results, 2 threads/CPU is enough, so the default threads of seqkit is 2.</p>
+<p><img src="seqkit_multi_threads/benchmark.5tests.tsv.png" alt="" width="750" align="center" /></p>
+<h3 id="tests-on-different-file-sizes">Tests on different file sizes</h3>
+<p>Files are generated by replicating Human genome chr1 for N times.</p>
+<p><img src="seqkit_file_size/benchmark.seqkit.files_size.tsv.png" alt="" width="550" align="center" /></p>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//seqkit.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

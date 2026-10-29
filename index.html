@@ -1,0 +1,1283 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="SeqKit - a cross-platform and ultrafast toolkit for FASTA/Q file manipulation">
+      
+      
+        <meta name="author" content="Wei Shen">
+      
+      
+      
+      
+        <link rel="next" href="download/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="files/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>SeqKit - Ultrafast FASTA/Q kit</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#seqkit-a-cross-platform-and-ultrafast-toolkit-for-fastaq-file-manipulation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="SeqKit - Ultrafast FASTA/Q kit" class="md-header__button md-logo" aria-label="SeqKit - Ultrafast FASTA/Q kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SeqKit - Ultrafast FASTA/Q kit
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/shenwei356/seqkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="SeqKit - Ultrafast FASTA/Q kit" class="md-nav__button md-logo" aria-label="SeqKit - Ultrafast FASTA/Q kit" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    SeqKit - Ultrafast FASTA/Q kit
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/shenwei356/seqkit" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-download-binaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 1: Download binaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-install-via-pixi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 2: Install via Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-install-via-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 3: Install via conda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-4-install-via-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 4: Install via homebrew
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subcommands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subcommands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="note/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/shenwei356" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    More tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-download-binaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 1: Download binaries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-install-via-pixi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 2: Install via Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-install-via-conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 3: Install via conda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-4-install-via-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 4: Install via homebrew
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subcommands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subcommands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="seqkit-a-cross-platform-and-ultrafast-toolkit-for-fastaq-file-manipulation">SeqKit - a cross-platform and ultrafast toolkit for FASTA/Q file manipulation</h1>
+<p><strong>Try SeqKit in your browser:</strong></p>
+<pre style="border: 2px solid var(--md-primary-fg-color); border-radius: 8px; background: rgba(0, 150, 136, 0.08); padding-right: 1em"><code class="language-bash" style="background: none"><span style="color: gray"># Find let-7 microRNA</span>
+$ <b style="color: var(--md-primary-fg-color)">seqkit</b> locate -p UGAGGUAGUAG hairpin.fa.gz | head</code></pre>
+
+<script src="https://sandbox.bio/embed.js" data-config="files/sandboxbio/index.json"></script>
+
+<ul>
+<li><strong>Interactive Tutorial:</strong> <a href="https://sandbox.bio/tutorials/seqkit-intro">https://sandbox.bio/tutorials/seqkit-intro</a></li>
+<li><strong>Documents:</strong> <a href="http://bioinf.shenwei.me/seqkit">http://bioinf.shenwei.me/seqkit</a>
+(<a href="http://bioinf.shenwei.me/seqkit/usage/"><strong>Usage</strong></a>,
+<a href="http://bioinf.shenwei.me/seqkit/faq/"><strong>FAQs</strong></a>,
+<a href="http://bioinf.shenwei.me/seqkit/tutorial/"><strong>Tutorial</strong></a>,
+and 
+<a href="http://bioinf.shenwei.me/seqkit/benchmark/"><strong>Benchmark</strong></a>)</li>
+<li><strong>Source code:</strong> <a href="https://github.com/shenwei356/seqkit">https://github.com/shenwei356/seqkit</a>
+<a href="https://github.com/shenwei356/seqkit"><img alt="GitHub stars" src="https://img.shields.io/github/stars/shenwei356/seqkit.svg?style=social&amp;label=Star&amp;?maxAge=2592000" /></a>
+<a href="https://github.com/shenwei356/seqkit/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/github/license/shenwei356/seqkit.svg?maxAge=2592000" /></a></li>
+<li><strong>Latest version:</strong> <a href="https://github.com/shenwei356/seqkit/releases"><img alt="Latest Version" src="https://img.shields.io/github/release/shenwei356/seqkit.svg?style=flat?maxAge=86400" /></a>
+<a href="http://bioinf.shenwei.me/seqkit/download/"><img alt="Github Releases" src="https://img.shields.io/github/downloads/shenwei356/seqkit/latest/total.svg?maxAge=3600" /></a>
+<a href="http://bioinf.shenwei.me/seqkit/download/"><img alt="Cross-platform" src="https://img.shields.io/badge/platform-any-ec2eb4.svg?style=flat" /></a>
+<a href="https://anaconda.org/bioconda/seqkit"><img alt="Anaconda Cloud" src="https://anaconda.org/bioconda/seqkit/badges/version.svg" /></a></li>
+<li><strong><a href="#citation">Please cite</a>:</strong> <a href="https://doi.org/10.1002/imt2.191"><img alt="doi" src="https://img.shields.io/badge/doi-10.1002%2Fimt2.191-blue.svg?style=flat" /></a> <a href="https://doi.org/10.1002/imt2.191"><img alt="Citation Badge" src="https://api.juleskreuer.eu/citation-badge.php?doi=10.1002/imt2.191" /></a></li>
+<li><strong>Others</strong>: <a href="https://biotreasury.rjmart.cn/#/tool?id=10081"><img alt="check in Biotreasury" src="https://img.shields.io/badge/Biotreasury-collected-brightgreen" /></a>  </li>
+</ul>
+<p><a href="https://doi.org/10.1002/imt2.191"><img src="seqkit2.jpg" alt="Subcommands of SeqKit2" width="700"/></a></p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Easy to install</strong> (<a href="http://bioinf.shenwei.me/seqkit/download/">download</a>)<ul>
+<li>Providing statically linked executable binaries for multiple platforms (Linux/Windows/macOS, amd64/arm64) </li>
+<li>Light weight and out-of-the-box, no dependencies, no compilation, no configuration</li>
+<li><code>conda install -c bioconda seqkit</code></li>
+</ul>
+</li>
+<li><strong>Easy to use</strong> <ul>
+<li>Ultrafast (see <a href="http://bioinf.shenwei.me/seqkit/usage/#technical-details-and-guides-for-use">technical-details</a> and <a href="http://bioinf.shenwei.me/seqkit/benchmark">benchmark</a>)</li>
+<li>Seamlessly parsing both FASTA and FASTQ formats</li>
+<li>Supporting (<code>gzip</code>/<code>xz</code>/<code>zstd</code>/<code>bzip2</code>/<code>lz4</code> compressed) STDIN/STDOUT and input/output file, easily integrated in pipe</li>
+<li>Reproducible results (configurable rand seed in <code>sample</code> and <code>shuffle</code>)</li>
+<li>Supporting custom sequence ID via regular expression</li>
+<li>Supporting <a href="http://bioinf.shenwei.me/seqkit/download/#shell-completion">Bash/Zsh autocompletion</a></li>
+</ul>
+</li>
+<li><strong>Versatile commands</strong> (<a href="http://bioinf.shenwei.me/seqkit/usage/">usages and examples</a>)<ul>
+<li>Practical functions supported by <a href="#subcommands">39 subcommands</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h4 id="method-1-download-binaries">Method 1: Download binaries</h4>
+<p>Go to <a href="http://bioinf.shenwei.me/seqkit/download">Download Page</a>, where you can find download links to various platforms.</p>
+<h4 id="method-2-install-via-pixi">Method 2: Install via Pixi</h4>
+<pre><code>pixi global install -c bioconda seqkit
+</code></pre>
+<h4 id="method-3-install-via-conda">Method 3: Install via conda</h4>
+<pre><code>conda install -c bioconda seqkit
+</code></pre>
+<h4 id="method-4-install-via-homebrew">Method 4: Install via homebrew</h4>
+<pre><code>brew install seqkit
+</code></pre>
+<h2 id="subcommands">Subcommands</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Input</th>
+<th style="text-align: left;">Strand-sensitivity</th>
+<th style="text-align: left;">Multi-threads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Basic operation</td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#seq">seq</a></td>
+<td style="text-align: left;">Transform sequences: extract ID/seq, filter by length/quality, remove gaps…</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#stats">stats</a></td>
+<td style="text-align: left;">Simple statistics: #seqs, min/max_len, N50, Q20%, Q30%…</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#subseq">subseq</a></td>
+<td style="text-align: left;">Get subsequences by region/gtf/bed, including flanking sequences</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ or/and -</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#sliding">sliding</a></td>
+<td style="text-align: left;">Extract subsequences in sliding windows</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ only</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#faidx">faidx</a></td>
+<td style="text-align: left;">Create the FASTA index file and extract subsequences (with more features than samtools faidx)</td>
+<td style="text-align: left;">FASTA</td>
+<td style="text-align: left;">+ or/and -</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#translate">translate</a></td>
+<td style="text-align: left;">translate DNA/RNA to protein sequence</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ or/and -</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#watch">watch </a></td>
+<td style="text-align: left;">Monitoring and online histograms of sequence features</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#scat">scat </a></td>
+<td style="text-align: left;">Real time concatenation and streaming of fastx files</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">Format conversion</td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#fq2fa">fq2fa</a></td>
+<td style="text-align: left;">Convert FASTQ to FASTA format</td>
+<td style="text-align: left;">FASTQ</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#fx2tab">fx2tab</a></td>
+<td style="text-align: left;">Convert FASTA/Q to tabular format</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#fa2fq">fa2fq</a></td>
+<td style="text-align: left;">Retrieve corresponding FASTQ records by a FASTA file</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ only</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#tab2fx">tab2fx</a></td>
+<td style="text-align: left;">Convert tabular format to FASTA/Q format</td>
+<td style="text-align: left;">TSV</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#convert">convert</a></td>
+<td style="text-align: left;">Convert FASTQ quality encoding between Sanger, Solexa and Illumina</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Searching</td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#grep">grep</a></td>
+<td style="text-align: left;">Search sequences by ID/name/sequence/sequence motifs, mismatch allowed</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ and -</td>
+<td style="text-align: left;">partly, -m</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#locate">locate</a></td>
+<td style="text-align: left;">Locate subsequences/motifs, mismatch allowed</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ and -</td>
+<td style="text-align: left;">partly, -m</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#amplicon">amplicon</a></td>
+<td style="text-align: left;">Extract amplicon (or specific region around it), mismatch allowed</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ and -</td>
+<td style="text-align: left;">partly, -m</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#fish">fish</a></td>
+<td style="text-align: left;">Look for short sequences in larger sequences</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ and -</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Set operation</td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#sample">sample</a></td>
+<td style="text-align: left;">Sample sequences by number or proportion</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#sample2">sample2</a></td>
+<td style="text-align: left;">Sample sequences by number or proportion (version 2)</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#rmdup">rmdup</a></td>
+<td style="text-align: left;">Remove duplicated sequences by ID/name/sequence</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ and -</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#common">common</a></td>
+<td style="text-align: left;">Find common sequences of multiple files by id/name/sequence</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ and -</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#duplicate">duplicate</a></td>
+<td style="text-align: left;">Duplicate sequences N times</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#split">split</a></td>
+<td style="text-align: left;">Split sequences into files by id/seq region/size/parts (mainly for FASTA)</td>
+<td style="text-align: left;">FASTA preferred</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#split2">split2</a></td>
+<td style="text-align: left;">Split sequences into files by size/parts (FASTA, PE/SE FASTQ)</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#head">head</a></td>
+<td style="text-align: left;">print the first N FASTA/Q records, or leading records whose total length &gt;= L</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#head-genome">head-genome</a></td>
+<td style="text-align: left;">Print sequences of the first genome with common prefixes in name</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#range">range</a></td>
+<td style="text-align: left;">Print FASTA/Q records in a range (start:end)</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#pair">pair</a></td>
+<td style="text-align: left;">Patch up paired-end reads from two fastq files</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Edit</td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#replace">replace</a></td>
+<td style="text-align: left;">Replace name/sequence by regular expression</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ only</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#rename">rename</a></td>
+<td style="text-align: left;">Rename duplicated IDs</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#concat">concat</a></td>
+<td style="text-align: left;">Concatenate sequences with same ID from multiple files</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ only</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#restart">restart</a></td>
+<td style="text-align: left;">Reset start position (rotate) for circular genomes</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ only</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#mutate">mutate</a></td>
+<td style="text-align: left;">Edit sequence (point mutation, insertion, deletion)</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;">+ only</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#sana">sana</a></td>
+<td style="text-align: left;">Sanitize broken single line FASTQ files</td>
+<td style="text-align: left;">FASTQ</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Ordering</td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#sort">sort</a></td>
+<td style="text-align: left;">Sort sequences by id/name/sequence/length</td>
+<td style="text-align: left;">FASTA preferred</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#shuffle">shuffle</a></td>
+<td style="text-align: left;">Shuffle sequences</td>
+<td style="text-align: left;">FASTA preferred</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">BAM processing</td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#bam">bam</a></td>
+<td style="text-align: left;">Monitoring and online histograms of BAM record features</td>
+<td style="text-align: left;">BAM</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Miscellaneous</td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#sum">sum</a></td>
+<td style="text-align: left;">Compute message digest for all sequences in FASTA/Q files</td>
+<td style="text-align: left;">FASTA/Q</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://bioinf.shenwei.me/seqkit/usage/#merge-slides">merge-slides</a></td>
+<td style="text-align: left;">Merge sliding windows generated from seqkit sliding</td>
+<td style="text-align: left;">TSV</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li>Strand-sensitivity:<ul>
+<li><code>+ only</code>: only processing on the positive/forward strand.</li>
+<li><code>+ and -</code>: searching on both strands.</li>
+<li><code>+ or/and -</code>: depends on users' flags/options/arguments.</li>
+</ul>
+</li>
+<li>Multiple-threads: Using the default 4 threads is fast enough for most commands, some commands can benefit from extra threads.</li>
+</ul>
+<h2 id="citation">Citation</h2>
+<p>Wei Shen*, Botond Sipos, and Liuyang Zhao. 2024. SeqKit2: A Swiss Army Knife for Sequence and Alignment Processing. <strong><em>iMeta</em></strong> e191. <a href="https://doi.org/10.1002/imt2.191">doi:10.1002/imt2.191</a>.
+<span class="__dimensions_badge_embed__" data-doi="10.1002/imt2.191" data-style="small_rectangle"></span></p>
+<h2 id="contributors">Contributors</h2>
+<ul>
+<li><a href="https://github.com/shenwei356">Wei Shen</a></li>
+<li><a href="https://github.com/botond-sipos">Botond Sipos</a>: <code>bam</code>, <code>scat</code>, <code>fish</code>, <code>sana</code>, <code>watch</code>.</li>
+<li><a href="https://github.com/shenwei356/seqkit/graphs/contributors">others</a></li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We thank all users for their valuable feedback and suggestions. We thank all contributors for improving the code and documentation.</p>
+<p>We appreciate <a href="https://github.com/klauspost">Klaus Post</a> for his fantastic packages (
+<a href="https://github.com/klauspost/compress">compress</a> and <a href="https://github.com/klauspost/pgzip">pgzip</a>
+) which accelerate gzip file reading and writing.</p>
+<h2 id="contact">Contact</h2>
+<p><a href="https://github.com/shenwei356/seqkit/issues">Create an issue</a> to report bugs,
+propose new functions or ask for help.</p>
+<h2 id="license">License</h2>
+<p><a href="https://github.com/shenwei356/seqkit/blob/master/LICENSE">MIT License</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
